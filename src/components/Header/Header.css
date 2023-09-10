@@ -1,0 +1,155 @@
+/* Header section */
+/* Logo */
+.logo {
+    font-size: 36px;
+    color: #333;
+    font-weight: 1000;
+    text-decoration: none;
+  }
+  
+  /* search-bar */
+  .search-bar button {
+    background-color: #333;
+    color: white;
+    border: 2px solid #333;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #555;
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 5px;
+    border: 2px solid #ccc;
+    margin-right: 1px;
+    width: 75%;
+  }
+  
+  /* Authlinks */
+  .auth-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .auth-links .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #aaa;
+    margin-right: 5px;
+  }
+  
+  .auth-links .username {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  /* CartIcon */
+  .cart-icon {
+    position: relative;
+  }
+  
+  .cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: center;
+    background-color:olive;
+  }
+  
+  .logo-auth-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .logo-container {
+    align-self: flex-start;
+  }
+  
+  .authlinks-container {
+    margin-left: 20px;
+    align-self: center;
+  }
+  
+  .search-container {
+    width: 70%;
+    margin: 5px auto;
+  }
+  
+  .bottom-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .nav-bar {
+    display: flex;
+    font-size: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .navigation a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .cart-icon {
+    margin-left: 10px;
+  }
+  
+  /* ProductCategoryMenu*/
+  .menu-container {
+    position: relative;
+  }
+  
+  .menu-icon:hover + .category-dropdown,
+  .category-dropdown:hover {
+    display: block;
+  }
+  
+  .category-dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 2px);
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .category-dropdown a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.3s;
+  }
+  
+  .category-dropdown a:hover {
+    background-color: #f6f6f6;
+  }
+  
+  .category-dropdown.open {
+    display: block;
+  }

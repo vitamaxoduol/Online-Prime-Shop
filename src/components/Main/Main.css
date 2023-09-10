@@ -1,0 +1,72 @@
+/* Hero styling */
+#hero {
+    position: relative;
+    overflow: hidden; /* Hide the products that are off the screen */
+    display: flex;
+    align-items: center; /* Vertically center everything */
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.3s; /* Smooth sliding effect */
+    width: 300%; /* Assumes each product will take up 33.33% */
+    gap: 20px; /* Add a gap between the products */
+}
+
+.product {
+    flex: 1;
+    min-width: 33.33%; /* Each product takes up one-third of the container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for the product */
+    padding: 10px; /* Padding around the product content */
+    background-color: #fff; /* Assuming a white background for the product box */
+   
+}
+
+button {
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    /*position: absolute; /* To position buttons over the slider */
+    /*top: 50%; /* Center the button vertically */
+    /*transform: translateY(-50%); /* Adjust the button's vertical position */
+}
+
+button:first-of-type {
+    left: 10px; /* Position the left button */
+}
+
+button:last-of-type {
+    right: 10px; /* Position the right button */
+}
+
+
+/* product style */
+section {
+    padding: 20px;
+    border-bottom: 2px solid #f4f4;
+    background-color:darkkhaki;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    flex: 1 0 calc(25% - 20px); /* for 3 products per row */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
