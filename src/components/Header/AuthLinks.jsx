@@ -5,8 +5,7 @@ const AuthLinks = ({ showModal, setShowModal, isShowLogin = true }) => {
     
     const [showLogin, setShowLogin] = useState(isShowLogin);
     return (
-        // <div className="logo-auth-container">
-        // <div className="authlinks-container">
+        
         <div className={`modal-container ${showModal ? "active" : ""}`}>
        
             <button onClick={() => setShowModal(true)}><h3>Sign In</h3></button>
@@ -14,6 +13,7 @@ const AuthLinks = ({ showModal, setShowModal, isShowLogin = true }) => {
 
             {showModal && (
                 <div className='modal'>
+                    <button className="close-btn" onClick={() => setShowModal(false)}>Close</button>
                     {showLogin ? (
                         <div className="login-form">
                             <h1 className="auth-title">Sign In</h1>
@@ -33,6 +33,14 @@ const AuthLinks = ({ showModal, setShowModal, isShowLogin = true }) => {
                             <h1 className="auth-title">Sign Up</h1>
                             <div className="input-group">
                                 <FaUser className="icon" />
+                                <input type="text" name="firstname" placeholder="Firstname" />
+                            </div>
+                            <div className="input-group">
+                                <FaUser className="icon" />
+                                <input type="text" name="lastname" placeholder="Lastname" />
+                            </div>
+                            <div className="input-group">
+                                <FaUser className="icon" />
                                 <input type="text" name="username" placeholder="Username" />
                             </div>
                             <div className="input-group">
@@ -47,14 +55,13 @@ const AuthLinks = ({ showModal, setShowModal, isShowLogin = true }) => {
                             <p>Already have an account? <button onClick={() => setShowLogin(true)}>Sign In</button></p>
                         </div>
                     )}
-                     <button className="close-btn" onClick={() => setShowModal(false)}>Close</button>
+                     {/* <button className="close-btn" onClick={() => setShowModal(false)}>Close</button> */}
 
                 </div>
             )}
 
         </div>
-        // </div>
-        // </div>
+
 
     );
 

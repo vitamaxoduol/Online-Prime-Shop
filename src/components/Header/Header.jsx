@@ -10,9 +10,9 @@ import './Header.css';
 function Header() {
   const [showModal, setShowModal] = useState(false);
 
-  // const handleSignInClick = () => {
-  //   setShowModal(true);
-  // }
+  const handleSignInClick = () => {
+    setShowModal(true);
+  }
   
   return (
     <div className="header">
@@ -22,8 +22,8 @@ function Header() {
           </div>
 
           <div className="authlinks-container">
-              <AuthLinks showModal={showModal} setShowModal={setShowModal} />
-              {/* <div onClick={handleSignInClick} className='loginicon'>Sign In</div> */}
+              <AuthLinks showModal={showModal} setShowModal={setShowModal} onClick={handleSignInClick} />
+              {/* <button onClick={handleSignInClick} className='loginicon'>Sign In</button> */}
           </div>
       </div>
       
@@ -37,7 +37,7 @@ function Header() {
         <div className="nav-bar">
           <Navigation />
         </div>
-        <CartIcon />
+        <CartIcon setShowModal={setShowModal} />
       </div>
     </div>
   );

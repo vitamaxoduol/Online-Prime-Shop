@@ -110,7 +110,7 @@ p {
 
 .close-btn {
   position: absolute;
-  bottom: 200px;
+  top: 50px;
   right: 10px;
   background: none;
   border: none;
@@ -118,7 +118,7 @@ p {
   cursor: pointer;
   padding: 0;
   line-height: 1;
-  color: #555; /* or any color you'd like for the close button */
+  color: #555; /*  any color for the close button */
 }
   /* CartIcon */
   .cart-icon {
@@ -185,10 +185,67 @@ p {
     text-decoration: none;
     color: inherit;
   }
-  
+
+
+  /* Styling if the cart */
   .cart-icon {
     margin-left: 10px;
+    position: relative;
   }
+  
+  .cart-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 500px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    z-index: 1;
+    padding-bottom: 20px;
+}
+
+.cart-info {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.cart-footer {
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.cart-item, .cart-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  font-weight: bold;
+  /* height: 0px; */
+  /* margin-bottom: -0px; */
+}
+
+.cart-item img {
+  width: 140px;
+  height: 80px;
+  margin: 10px 0;
+  margin-right: auto;
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  /* margin: 10px 0; */
+}
+
+.cart-total {
+  margin-top: 10px;
+  font-weight: bold;
+}
   
   /* ProductCategoryMenu*/
   .menu-container {

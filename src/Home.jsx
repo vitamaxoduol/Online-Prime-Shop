@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ProductContext } from './components/Contexts/ProductContext';
 import { CartContext } from './components/Contexts/CartContext';
+import Hero from './Hero';
 
 function Home() {
     const navigate = useNavigate();
@@ -47,6 +48,8 @@ function Home() {
     }, []);
 
     return (
+        <div className='Home'>
+            <Hero />
         <div>
             {Object.entries(products).map(([category, productsList]) => (
                 <section key={category}>
@@ -70,31 +73,13 @@ function Home() {
                                 </li>
                             ))}
                         </ul> */}
-                                <button style={{
-                                    backgroundColor: '#3498db',
-                                    color: 'white',
-                                    border: 'none',
-                                    padding: '10px 20px',
-                                    borderRadius: '5px',
-                                    margin: '10px',
-                                    cursor: 'pointer',
-                                    textDecoration: 'none'
-                                }} onClick={() => {
+                                <button style={buttonStyles} onClick={() => {
                                     setProduct(product);
                                     navigate(`/product/${product.id}`);
                                 }}>
                                     More Details
                                 </button>
-                                <button style={{
-                                    backgroundColor: 'olive',
-                                    color: 'white',
-                                    border: 'none',
-                                    padding: '10px 20px',
-                                    borderRadius: '5px',
-                                    margin: '10px',
-                                    cursor: 'pointer',
-                                    textDecoration: 'none'
-                                }} onClick={() => addToCart(product)}>
+                                <button style={buttonStyles} onClick={() => addToCart(product)}>
                                     🛒 ADD TO CART
                                 </button>
                             </li>
@@ -103,6 +88,20 @@ function Home() {
                 </section>
             ))}
         </div>
+
+    </div>
     );
 }
+
+const buttonStyles = {
+backgroundColor: 'olive',
+color: 'white',
+border: 'none',
+padding: '10px 30px',
+borderRadius: '5px',
+margin: '10px',
+cursor: 'pointer',
+textDecoration: 'none'
+};
+
 export default Home;
