@@ -27,6 +27,7 @@ function Hero() {
 
     return (
         <section id="hero">
+            <h2>Featured Products</h2>
             <button onClick={prevSlide}>←</button>
 
             <div className="slider-container">

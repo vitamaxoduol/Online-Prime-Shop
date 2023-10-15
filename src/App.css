@@ -1,10 +1,24 @@
 @import "~font-awesome/css/font-awesome.css";
-* Hero styling */
+
+body {
+    overflow: auto;
+}
+
+/* app style position */
+.app {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    right: 0;
+}
+
+/* Hero styling */
 #hero {
     position: relative;
-    overflow: hidden; /* Hide the products that are off the screen */
+    overflow: hidden; /*Hide the products that are off the screen */
     display: flex;
     align-items: center; /* Vertically center everything */
+    padding-top: 180px;
 }
 
 .slider-container {
@@ -48,7 +62,7 @@ button:last-of-type {
 section {
     padding: 20px;
     border-bottom: 2px solid #f4f4;
-    background-color:darkkhaki;
+    background-color: #f3f3f3;
 }
 
 ul {
@@ -132,11 +146,17 @@ li:hover {
 /* Footer.css */
 
 .footer {
-    padding: 20px;
-    background-color: #f3f3f3;
+    padding: 10px;
+    background-color: darkkhaki;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    /* position: fixed; */
+    bottom:  0;
+    right: 0;
+    left: 0;
+    width: 100%;
+
 }
 
 .info-links, .newsletter, .social-media, .contact-info {
@@ -144,11 +164,18 @@ li:hover {
     display: block;
 }
 
+.info-links .contact-info {
+    margin: 10px;
+    display: block;
+    font-size: bold;
+}
+
 .info-links a, .social-media a {
     margin-right: 20px;
     text-decoration: none;
     color: #333;
     transition: color 0.3s ease;
+    display: block;
 }
 
 .info-links a:hover, .social-media a:hover {
@@ -156,7 +183,7 @@ li:hover {
 }
 
 .newsletter form {
-    display: flex;
+    display: block;
     justify-content: space-between;
 }
 
@@ -171,3 +198,68 @@ li:hover {
     margin-right: 10px;
 }
 
+/* Checkout */
+
+.checkout {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 180px;
+    height: 400px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="tel"] {
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .order-placed-message {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #009900;
+  }

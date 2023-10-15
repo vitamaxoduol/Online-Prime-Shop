@@ -1,10 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faPlus, faMinus, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { CartContext } from './../Contexts/CartContext';
+import { useCart } from './../Contexts/CartContext';
 
 function CartIcon({ setShowModal }) {
-  const { cartProducts, addToCart, removeFromCart, setCartProducts } = useContext(CartContext); 
+  const { cartProducts, addToCart, removeFromCart, setCartProducts } = useCart(); 
   const [showCartDropdown, setShowCartDropdown] = useState(false);
 
   // Toggle cart dropdown display
@@ -39,12 +39,10 @@ return (
                         <p>Order before 10 pm and get it delivered next day before 3 pm.Order before noon and get it delivered today.Order PrimeshopifyGo for delivery within 3 hours between 8 AM and 5 PM!</p>
                         <p>Welcome Guest! 👋</p>
                         <p>Register with Primeshopify to save your cart, save products for later, view order history, & more!</p>
-                        <button style={{ ...buttonStyles, backgroundColor: 'green', width: '100%' }} onClick={() => setShowModal(true)}>
-                            Register
+                        <button style={{ ...buttonStyles, backgroundColor: 'darkkhaki', width: '100%' }} onClick={() => setShowModal(true)}>
+                            Register or Sign In
                         </button>
-                        <p>Already a customer?</p> <button style={{ ...buttonStyles, backgroundColor: 'green', width: '100%' }} onClick={() => setShowModal(true)}>
-                            Sign In
-                        </button>
+                        
             </div>
               {cartProducts.map(product => (
                   <div key={product.id} className="cart-item">
@@ -71,7 +69,7 @@ return (
                         <div className="cart-total">
                             Subtotal Amount: KSH {cartProducts.reduce((acc, product) => acc + product.price * product.quantity, 0)}
                         </div>
-                        <button style={{ ...buttonStyles, width: '100%', backgroundColor: 'green' }} onClick={() => window.location.href = '/checkout'}>
+                        <button style={{ ...buttonStyles, width: '100%', backgroundColor: 'darkkhaki' }} onClick={() => window.location.href = '/checkout'}>
                             Checkout Now
                         </button>
                     </div>
@@ -83,7 +81,7 @@ return (
 }
 
 const buttonStyles = {
-backgroundColor: 'olive',
+backgroundColor: 'darkkhaki',
 color: 'white',
 border: 'none',
 padding: '10px 30px',

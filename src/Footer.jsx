@@ -4,15 +4,15 @@ function Footer() {
     return (
         <footer className="footer">
             <div className="info-links">
-                <a href="/about">About Us</a>
-                <a href="term and conditions">Terms & Conditions</a>
-                <a href="/privacy policy">Privacy Policy</a>
+                {/* <a href="/about">About Us</a> */}
+                {/* <a href="term and conditions">Terms & Conditions</a> */}
+                {/* <a href="/privacy policy">Privacy Policy</a> */}
             </div>
             <div className="newsletter">
-                <h4>Subscribe to our Newsletter</h4>
+                <h4>Newsletter Subscription</h4>
                 <form>
-                    <input type="email" placeholder="Your email address" />
-                    <button type="submit">Subscribe</button>
+                    <input style={{width: '50%' }}  type="email" placeholder="Your email address" />
+                    <button style={{display:'block' }} type="submit">Subscribe</button>
                 </form>
             </div>
             <div className="social-media">
@@ -22,8 +22,8 @@ function Footer() {
                 <a href="#!"><i className="fa fa-linkedin"></i></a>
             </div>
             <div className="contact-info">
-                <p>123 Prime Shopify Lane, ShopCity, 12345</p>
-                <p>Phone<FaPhone />:(123) 456-7890</p>
+                <p>PrimeShopify ShopCity</p>
+                <p>Phone<FaPhone />:(254) 756-7890</p>
                 <p>Email: contact@primeshopify.com</p>
             </div>
         </footer>

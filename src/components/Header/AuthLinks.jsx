@@ -1,15 +1,39 @@
 import React, { useState } from 'react';
 import { FaUser, FaLock, FaEnvelope } from 'react-icons/fa';
+import { useAuth } from './../Contexts/AuthContext';
 
 const AuthLinks = ({ showModal, setShowModal, isShowLogin = true }) => {
     
     const [showLogin, setShowLogin] = useState(isShowLogin);
+    const { user, isAuthenticated, setUser, login } = useAuth(); // Destructure the login function
+    // eslint-disable-next-line
+    const [loginData, setLoginData] = useState({ username: '', password: '' });
+    const  username = user?.users?.[0]?.username;
+
+    const handleLogin = async () => {
+        const { username, password } = loginData; // Use loginData for login
+        await login(username, password); // Use the login function from useAuth
+        setShowModal(false); // Close the modal after successful login
+    };
+    
+    const handleLogout = () => {
+        // Implement logout logic here
+        setUser({});
+        setShowModal(false);
+    };
+
     return (
-        
         <div className={`modal-container ${showModal ? "active" : ""}`}>
-       
-            <button onClick={() => setShowModal(true)}><h3>Sign In</h3></button>
-        
+            {isAuthenticated ? (
+                <>
+                    <h3>Welcome, {username}! </h3>
+                    <button onClick={handleLogout}>Logout</button>
+                </>
+            ) : (
+                <button onClick={() => setShowModal(true)}>
+                    <h3>Sign In</h3>
+                </button>
+            )}
 
             {showModal && (
                 <div className='modal'>
@@ -25,7 +49,7 @@ const AuthLinks = ({ showModal, setShowModal, isShowLogin = true }) => {
                                 <FaLock className="icon" />
                                 <input type="password" name="password" placeholder="Password" />
                             </div>
-                            <input type="submit" value="Login" className="auth-btn" />
+                            <button onClick={handleLogin}>Login</button> {/* Use handleLogin for login button */}
                             <p>Don't have an account? <button onClick={() => setShowLogin(false)}>Sign Up</button></p>
                         </div>
                     ) : (
@@ -55,15 +79,10 @@ const AuthLinks = ({ showModal, setShowModal, isShowLogin = true }) => {
                             <p>Already have an account? <button onClick={() => setShowLogin(true)}>Sign In</button></p>
                         </div>
                     )}
-                     {/* <button className="close-btn" onClick={() => setShowModal(false)}>Close</button> */}
-
                 </div>
             )}
-
         </div>
-
-
     );
+};
 
-}
 export default AuthLinks;

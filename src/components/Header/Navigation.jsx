@@ -1,15 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navigation() {
   return (
     <nav className="navigation">
-      <a href='/'>Home</a>
-      <a href="/products">Products</a>
-      <a href="/about">About Us</a>
-      <a href="/contact">Contact</a>
-      <a href="/blog">Blog</a>
-      <a href="/support">Support</a>
-      {/* Add other links as needed */}
+      <Link to='/'>Home</Link>
+      <Link to="/products">Products</Link>
+      <div className='dropdown'>
+        <button className='dropbtn'>About Us</button>
+        <div className='dropdown-content'>
+          <Link to="/about">About Us</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/support">Support</Link>
+          <Link to="/terms-and-conditions">Terms & Conditions</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+        </div>
+      </div>
     </nav>
   );
 }

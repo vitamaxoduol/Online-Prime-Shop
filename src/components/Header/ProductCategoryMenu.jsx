@@ -1,8 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+// import { ProductContext } from './../Contexts/ProductContext';
 
 function ProductCategoryMenu() {
+  // const { setProduct } = useContext(ProductContext);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const hoverTimer = useRef(null); // for the timer
@@ -47,12 +50,12 @@ function ProductCategoryMenu() {
       />
       {isOpen && (
         <div className="category-dropdown open">
-          <a href="/category/smartphones">Smartphones</a>
-          <a href="/category/laptops">Laptops</a>
-          <a href="/category/fragrances">Fragrances</a>
-          <a href="/category/skincare">Skincare</a>
-          <a href="/category/groceries">Groceries</a>
-          <a href="/category/home-decorations">Home Decorations</a>
+          <Link to="/product/smartphones">Smartphones</Link>
+          <Link to="/product/laptops">Laptops</Link>
+          <Link to="/product/fragrances">Fragrances</Link>
+          <Link to="/product/skincare">Skincare</Link>
+          <Link to="/product/groceries">Groceries</Link>
+          <Link to="/product/home-decorations">Home Decorations</Link>
         </div>
       )}
     </div>
